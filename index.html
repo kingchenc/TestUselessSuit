@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UselessSuit - Fun Games</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Header with dark mode toggle -->
+        <header class="header">
+            <h1>UselessSuit</h1>
+            <button id="darkModeToggle" class="dark-mode-toggle" aria-label="Toggle dark mode">
+                <span class="sun-icon">☀️</span>
+                <span class="moon-icon">🌙</span>
+            </button>
+        </header>
+
+        <!-- Sticky tab navigation -->
+        <nav class="tab-nav">
+            <button class="tab-btn active" data-tab="snake">Snake Game</button>
+            <button class="tab-btn" data-tab="clicker">Clicker Game</button>
+        </nav>
+
+        <!-- Tab content -->
+        <main class="main-content">
+            <!-- Snake Game Tab -->
+            <div id="snake" class="tab-content active">
+                <div class="game-container">
+                    <h2>Snake Game</h2>
+                    <div class="game-info">
+                        <span>Score: <span id="snakeScore">0</span></span>
+                        <button id="snakeStart" class="game-btn">Start Game</button>
+                    </div>
+                    <canvas id="snakeCanvas" width="400" height="400"></canvas>
+                    <div class="game-controls">
+                        <p>Use arrow keys or WASD to control the snake</p>
+                        <div class="mobile-controls">
+                            <button class="control-btn" data-direction="up">↑</button>
+                            <div class="control-row">
+                                <button class="control-btn" data-direction="left">←</button>
+                                <button class="control-btn" data-direction="down">↓</button>
+                                <button class="control-btn" data-direction="right">→</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Clicker Game Tab -->
+            <div id="clicker" class="tab-content">
+                <div class="game-container">
+                    <h2>Brain Dead Clicker</h2>
+                    <div class="clicker-stats">
+                        <div class="stat">
+                            <span class="stat-label">Clicks:</span>
+                            <span id="clickCount" class="stat-value">0</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Time:</span>
+                            <span id="timer" class="stat-value">0.0s</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">CPS:</span>
+                            <span id="cps" class="stat-value">0.0</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">High Score:</span>
+                            <span id="highScore" class="stat-value">0</span>
+                        </div>
+                    </div>
+                    <div class="clicker-game">
+                        <button id="clickButton" class="click-button">
+                            <span class="click-text">CLICK ME!</span>
+                            <span class="click-effect"></span>
+                        </button>
+                        <div class="clicker-controls">
+                            <button id="resetClicker" class="game-btn">Reset</button>
+                            <button id="startTimer" class="game-btn">Start Timer</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Back to top button -->
+        <button id="backToTop" class="back-to-top" aria-label="Back to top">
+            <span>↑</span>
+        </button>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="snake.js"></script>
+    <script src="clicker.js"></script>
+</body>
+</html>
