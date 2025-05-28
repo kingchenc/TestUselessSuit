@@ -89,6 +89,9 @@ class ClickerGame {
         // Check for new high score
         this.checkHighScore();
         
+        // Check for achievements
+        this.checkAchievements();
+        
         // Auto-start timer on first click if not already running
         if (!this.isTimerRunning && !this.startTime) {
             this.startTimer();
